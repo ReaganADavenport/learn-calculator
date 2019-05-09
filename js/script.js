@@ -9,11 +9,23 @@ const input = document.getElementById('input'), // input/output button
 let resultDisplayed = false; // flag to keep an eye on what output is displayed
 
 // adding click handlers to number buttons
-numbers.forEach(function(number){
+Array.from(numbers).map(number=> {
+    const lastChar = input.innerHTML[input.innerHTML.length-1];
     number.addEventListener('click', function(){
-        input.innerHTML += this.innerHTML;
-    });
-});
+        if(resultDisplayed === false){
+            input.innerHTML += this.innerHTML;
+        } else if (
+            (resultDisplayed === true) && (lastChar ==='+'||lastChar ==='-'|| lastChar ==='*'|| lastChar ==='/') 
+        ){
+            resultDisplayed = false;
+            input.innerHTML+= this.innerHTML;
+        } else {
+            resultDisplayed = false;
+            input.innerHTML = '';
+            input.innerHTML += this.innerHTML;
+        }
+    })
+})
 // adding click handlers to the operation buttons
 operator.forEach(function(operators){
     operators.addEventListener('click', function(){
