@@ -18,7 +18,7 @@ Array.from(numbers).map(number=> {
             resultDisplayed === true && lastChar ==='+'||lastChar ==='-'|| lastChar ==='*'|| lastChar ==='/'
         ){
             resultDisplayed = false;
-            input.innerHTML += this.innerHTML;
+            input.innerHTML+= this.innerHTML;
         } else {
             resultDisplayed = false;
             input.innerHTML = '';
