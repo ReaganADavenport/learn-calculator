@@ -18,7 +18,7 @@ numbers.forEach(function(number){
 operator.forEach(function(operators){
     operators.addEventListener('click', function(){
         const lastChar = input.innerHTML[input.innerHTML.length-1];
-        if (lastChar ==='+'||lastChar ==='-'||lastChar==='×'||lastChar==='÷'){
+        if (lastChar ==='+'||lastChar ==='-'||lastChar==='*'||lastChar==='/'){
            let newInput = input.innerHTML.substring(0,input.innerHTML.length-1)+ this.innerHTML;
            input.innerHTML = newInput; 
         } else if(input.innerHTML.length == 0){
